@@ -1,0 +1,1593 @@
+/* Custom CSS (style.css) */
+
+/* 1. Base Styles & Typography */
+body {
+    /* Use 'Playfair Display' for headings and 'Lato' for body text */
+    font-family: 'Lato', sans-serif;
+    color: #444; /* Darker text for readability */
+    background-color: #fffaf7; /* Off-white, soft background */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* 2. Dynamic Header Styling */
+.custom-navbar {
+    transition: background-color 0.3s ease;
+    padding-top: 1.5rem; /* Space above/below navigation items */
+    padding-bottom: 1.5rem;
+}
+
+.custom-navbar .nav-link {
+    color: #444 !important;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-left: 15px;
+}
+
+/* Hero Section Styling */
+.hero-section {
+    position: relative;
+    /* Use the uploaded image as background */
+    background-image: url('img/bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh; /* Set a minimum height for visibility */
+    color: rgb(0, 0, 0); /* Dark text color */
+    padding: 6rem 0;
+}
+
+/* Background Image Overlay (Updated for a different color tint) */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* --- KEY CHANGE HERE --- */
+    /* This creates a subtle blue-grey tint over the image */
+    background-color: rgba(82, 82, 83, 0.4); /* Cooler blue-grey tint */
+    mix-blend-mode: multiply; /* Mixes the overlay color with the background image */
+    opacity: 0.8;
+    z-index: 1; 
+}
+
+/* Content Positioning */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+    max-width: 700px; /* Constrain text width */
+}
+
+/* Text Styles */
+.hero-title, .hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    color: rgb(248, 248, 248); /* Darker tone for headings */
+}
+
+.hero-title {
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-weight: 400;
+    margin-top: -10px; /* Bring subtitle closer to title */
+    color: #d9d9d9;
+}
+
+.hero-text {
+    max-width: 450px;
+    line-height: 1.6;
+    color: rgb(255, 255, 255);
+}
+
+/* Button Styles (Keeping the original warm buttons to show contrast, but they could be changed too) */
+.custom-btn-gradient {
+    /* Custom Gradient Background (Matching the soft gold/peach tone) */
+    background-image: linear-gradient(to right, #f7d9a8, #e7c08e);
+    border: none;
+    color: #5d4a36; /* Darker text for contrast on light background */
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 50px; /* Pill shape */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle lift */
+    transition: all 0.3s ease;
+}
+
+.custom-btn-gradient:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0.9;
+}
+
+.custom-btn-outline {
+    /* Outline button with dark border, matching the text style */
+    background-color: transparent;
+    border: 1px solid #7a7a7a;
+    color: #7a7a7a;
+    font-weight: 500;
+    padding: 12px 30px;
+    border-radius: 50px; /* Pill shape */
+    transition: all 0.3s ease;
+}
+
+.custom-btn-outline:hover {
+    background-color: #f0f0f0;
+    color: #444;
+}
+
+/* Responsiveness adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 70vh;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .custom-btn-gradient, .custom-btn-outline {
+        width: 80%; /* Make buttons full width on small screens */
+        margin-right: 0 !important;
+        margin-bottom: 10px !important;
+    }
+}
+
+/* Sections-02 */
+
+/* Ensure these fonts are linked in your HTML <head> */
+/* font-family: 'Playfair Display', serif; for headings */
+/* font-family: 'Lato', sans-serif; for body text */
+
+/* Section Background (Matching the soft, off-white from the hero) */
+.connection-section {
+    background-color: #fffaf7; 
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/* Section Heading Style */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #444; /* Dark text color */
+}
+
+/* Card Styling (Key to the design's soft look) */
+.connection-card {
+    background-color: #ffffff; /* Explicitly white background */
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Very light, subtle border */
+    border-radius: 8px;
+    
+    /* The subtle, floating shadow is crucial */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03); 
+    transition: all 0.3s ease;
+}
+
+.connection-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Slight lift on hover */
+}
+
+/* Card Text Style */
+.card-text {
+    font-family: 'Lato', sans-serif;
+    color: #666;
+    font-size: 0.95rem; /* Slightly smaller text for the content */
+    line-height: 1.6;
+}
+
+/* Bootstrap Grid Adjustments (Ensuring the grid is responsive) */
+/* On desktop (lg and up), we use 3 columns (col-lg-4) */
+/* On tablet (md), we use 2 columns (col-md-6) */
+/* On mobile (default), we use 1 column (col-12) */
+
+/* Sections-03 */
+
+/* Section Base */
+.problem-section {
+    background-color: #fffaf7; /* Soft, consistent off-white background */
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/* Heading Style (Using Playfair Display assumed from previous sections) */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #444;
+}
+
+/* Problem Statement Text Styling */
+.problem-statement h4 {
+    color: #444; /* Dark text for primary statement */
+}
+.problem-statement p {
+    color: #7a7a7a;
+}
+
+/* Skills Not Learned List Styling */
+.skills-not-learned h4 {
+    /* Subtle coloring for the secondary heading, matching the list content color */
+    color: #e7c08e; /* Soft gold/brown/tan color */
+    font-family: 'Lato', sans-serif; /* Using a non-serif font for contrast */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
+
+.skills-not-learned ul {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 0;
+}
+
+.skills-not-learned li {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #666;
+    /* Custom icon color for the list checks (Requires Font Awesome) */
+}
+
+.skills-not-learned li .fa-check {
+    color: #e7c08e; /* Matching the skills heading color */
+}
+
+/* Call-to-Action Box Styling (The large box at the bottom) */
+.cta-box {
+    /* Soft border color matching the overall aesthetic */
+    border: 1px solid #e7c08e; 
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+    margin-top: 3rem; /* Space from the content above */
+}
+
+.cta-box p {
+    color: #444;
+}
+
+/* Small dot/marker above the CTA box (Custom detail from the image) */
+.cta-box::before {
+    content: '';
+    position: absolute;
+    top: -10px; /* Position it just above the box */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: #e7c08e;
+    border-radius: 50%;
+    /* Optional subtle shadow on the dot */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); 
+}
+
+/* Responsiveness: Stacking columns on mobile */
+@media (max-width: 767px) {
+    .problem-statement {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        /* Optional: Add a subtle separator between the two columns on mobile */
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.1); 
+    }
+    .problem-statement, .skills-not-learned {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+/* Sections-04 */
+
+/* Section Base */
+.why-not-worked-section {
+    background-color: #fffaf7; /* Consistent soft off-white background */
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/* Section Heading Style */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #444;
+}
+
+/* Reason Card Styling */
+.reason-card {
+    background-color: #fcf8f5; /* Slightly darker off-white for the cards */
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03); /* Soft shadow */
+    transition: all 0.3s ease;
+}
+
+.reason-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Slightly more prominent shadow on hover */
+}
+
+.reason-card .card-title {
+    font-family: 'Lato', sans-serif; /* Using Lato for card titles for readability */
+    color: #444;
+    font-size: 1.25rem; /* Larger font size for titles */
+}
+
+.reason-card .card-text,
+.reason-card ul li {
+    font-family: 'Lato', sans-serif;
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.9rem; /* Smaller text for content */
+}
+
+/* List specific styling for the first card */
+.reason-card ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+}
+
+.reason-card ul li {
+    position: relative;
+    padding-left: 1.2em; /* Space for custom bullet if desired */
+    margin-bottom: 0.5em; /* Space between list items */
+}
+
+/* Optional: Add a custom bullet point if you want something different than default */
+/*
+.reason-card ul li::before {
+    content: '•'; 
+    color: #e7c08e; 
+    font-weight: bold; 
+    display: inline-block; 
+    width: 1em; 
+    margin-left: -1em; 
+}
+*/
+
+/* Bootstrap Grid Adjustments:
+   - col-lg-4: 3 columns on large screens
+   - col-md-6: 2 columns on medium screens
+   - col-12: 1 column on small screens (default)
+*/
+
+/* Sections-05 */
+
+
+/* Section Base */
+.program-overview-section {
+    background-color: #fffaf7; /* Consistent soft off-white background */
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/* Main Section Headings */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #444;
+}
+
+.section-subtitle {
+    font-family: 'Lato', sans-serif;
+    color: #7a7a7a;
+    max-width: 650px; /* Constrain width for readability */
+    line-height: 1.6;
+}
+
+/* Feature Card Styling (Icon + Text Grid) */
+.feature-card {
+    background-color: #ffffff; /* White background for features */
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03); /* Soft shadow */
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Slight lift on hover */
+}
+
+.feature-card .feature-icon {
+    font-size: 2.2rem; /* Size of the icon */
+    color: #e7c08e; /* Consistent gold/tan color for icons */
+    margin-bottom: 0.5rem;
+}
+
+.feature-card .feature-title {
+    font-family: 'Lato', sans-serif;
+    color: #444;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.feature-card .feature-text {
+    font-family: 'Lato', sans-serif;
+    color: #7a7a7a;
+    line-height: 1.4;
+}
+
+/* "What This Program IS/IS NOT" Boxes */
+.program-info-box {
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.program-info-box h5 {
+    font-family: 'Lato', sans-serif;
+    color: #444;
+    font-size: 1.25rem;
+}
+
+.program-info-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.program-info-box ul li {
+    font-family: 'Lato', sans-serif;
+    color: #666;
+    line-height: 2; /* More space between list items */
+}
+
+/* Specific styling for the "IS NOT" box */
+.not-box {
+    background-color: #fcf8f5; /* Slightly muted background */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.not-box .fa-times {
+    color: #dc3545; /* Bootstrap's danger red for 'X' */
+}
+
+/* Specific styling for the "IS" box */
+.is-box {
+    background-color: #fcf8f5; /* Slightly muted background */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.is-box .fa-check {
+    color: #e7c08e; /* Consistent gold/tan for checkmarks */
+}
+
+
+ /* Responsive adjustments for feature cards:
+   - col-lg-3: 4 columns on large screens
+   - col-md-4: 3 columns on medium screens
+   - col-6: 2 columns on small screens */
+
+
+   /* Sections-07 */
+
+   /* Section Base */
+.what-you-get-section {
+    background-color: #fffaf7; /* Consistent soft off-white background */
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/* Section Heading Style */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #444;
+}
+
+/* "What You Get" Item Card Styling */
+.get-item-card {
+    background-color: #fcf8f5; /* Slightly muted white for cards */
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03); /* Soft shadow */
+    transition: all 0.3s ease;
+}
+
+.get-item-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Slight lift on hover */
+}
+
+.get-item-card .get-item-icon {
+    font-size: 2.2rem; /* Size of the icon */
+    color: #e7c08e; /* Consistent gold/tan color for icons */
+    margin-bottom: 0.8rem;
+}
+
+.get-item-card .get-item-title {
+    font-family: 'Lato', sans-serif;
+    color: #444;
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+}
+
+.get-item-card .get-item-text {
+    font-family: 'Lato', sans-serif;
+    color: #7a7a7a;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments for cards:
+   - col-lg-4: 3 columns on large screens
+   - col-md-6: 2 columns on medium screens
+   - col-12: 1 column on small screens (default)
+*/
+
+/* Section Base */
+.pricing-section {
+    background-color: #fffaf7; /* Consistent soft off-white background */
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/* Section Heading Style */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #444;
+}
+
+/* Pricing Card Container Styling */
+.pricing-card-container {
+    max-width: 450px; /* Constrain the card width */
+    border-radius: 8px;
+    overflow: hidden; /* Ensures the top banner doesn't spill over */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Prominent shadow */
+    background-color: #ffffff;
+}
+
+/* Card Top Banner (The dark gold section) */
+.card-top-banner {
+    /* Strong gold/brown gradient background */
+    background: linear-gradient(to right, #b8860b, #daa520);
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+.card-top-banner del {
+    opacity: 0.8;
+}
+
+/* Card Body (The white section with offer details) */
+.card-body-offer {
+    background-color: #ffffff;
+    padding: 2.5rem 1.5rem;
+}
+
+.offer-title {
+    font-family: 'Playfair Display', serif;
+    color: #b8860b; /* Deep gold color for the main offer text */
+    font-size: 1.8rem;
+}
+
+/* Main CTA Button inside the card */
+.custom-btn-gradient-small {
+    /* Custom Gradient Background (Matching the soft gold/peach tone) */
+    background-image: linear-gradient(to right, #f7d9a8, #e7c08e);
+    border: none;
+    color: #5d4a36; /* Darker text for contrast */
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 50px; /* Pill shape */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease;
+}
+
+.custom-btn-gradient-small:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0.9;
+    color: #5d4a36;
+}
+
+/* Fine Print Styling */
+.tiny-text {
+    font-size: 0.75rem;
+    color: #7a7a7a;
+    line-height: 1.2;
+}
+.tiny-text-small {
+    font-size: 0.65rem;
+    color: #999;
+    line-height: 1.2;
+}
+
+/* Sections-08 */
+
+/* Section Base */
+.testimonials-section {
+    background-color: #fffaf7; /* Consistent soft off-white background */
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/* Section Heading Style */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #444;
+}
+
+/* Star Rating Styling */
+.gold-star {
+    color: #e7c08e; /* Consistent gold/tan color for the stars */
+    font-size: 1.5rem;
+    margin: 0 1px;
+}
+
+/* Testimonial Card Styling */
+.testimonial-card {
+    background-color: #fcf8f5; /* Slightly muted white for cards */
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
+    border-radius: 8px;
+    /* Soft shadow to make the card look elevated, matching the design aesthetic */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03); 
+    transition: all 0.3s ease;
+    height: 100%; /* Ensures all cards are the same height */
+}
+
+.testimonial-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Slight lift on hover */
+}
+
+.testimonial-card .quote-text {
+    font-family: 'Lato', sans-serif;
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-style: italic; /* Quotes are often italicized */
+}
+
+.testimonial-card .reviewer-name {
+    font-family: 'Lato', sans-serif;
+    color: #e7c08e; /* Highlight the name/initials in the accent color */
+    font-size: 0.85rem;
+    text-align: right; /* Align name to the right as shown in the image */
+}
+
+/* Responsive adjustments for cards:
+   - col-lg-4: 3 columns on large screens
+   - col-md-6: 2 columns on medium screens
+   - col-12: 1 column on small screens (default)
+*/
+
+
+/* Sections-09 */
+
+/* Section Base */
+.qualifying-section {
+    background-color: #fffaf7; /* Consistent soft off-white background */
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/* Section Heading Style */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #444;
+}
+
+/* General Box Styling */
+.qualifying-box {
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow on both boxes */
+    padding: 2.5rem;
+}
+
+.qualifying-box .box-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.qualifying-box ul {
+    padding-left: 0;
+}
+
+.qualifying-box ul li {
+    font-family: 'Lato', sans-serif;
+    color: #333; /* Darker text for readability */
+    line-height: 2; /* Increased line spacing */
+}
+
+/* Affirmation Box (Green) Specific Styling */
+.affirmation-box {
+    /* Soft pastel green background */
+    background-color: #e5f5e5; 
+    border: 1px solid #c8e6c9;
+}
+
+.affirmation-box .box-title {
+    color: #388e3c; /* Darker green for the title and icon */
+}
+
+.affirmation-box ul li {
+    list-style-type: none; /* Hide default bullets */
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.affirmation-box ul li::before {
+    content: '✓'; 
+    color: #4caf50; /* Bright green checkmark color */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+/* Disqualification Box (Red/Pink) Specific Styling */
+.disqualification-box {
+    /* Soft pastel red/pink background */
+    background-color: #fce4e4; 
+    border: 1px solid #f8d0d0;
+}
+
+.disqualification-box .box-title {
+    color: #d32f2f; /* Darker red for the title and icon */
+}
+
+.disqualification-box ul li {
+    list-style-type: none; /* Hide default bullets */
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.disqualification-box ul li::before {
+    content: '✖'; 
+    color: #f44336; /* Bright red cross color */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Sections-10 */
+
+/* Section Base */
+.program-outline-section {
+    background-color: #fffaf7; /* Consistent soft off-white background */
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/* Section Heading Style */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #444;
+}
+
+/* Outline Card Styling (for each program module/bonus group) */
+.outline-card {
+    background-color: #fcf8f5; /* Slightly muted white for cards, as per design */
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03); /* Soft shadow */
+}
+
+.outline-card .outline-card-title {
+    font-family: 'Lato', sans-serif;
+    color: #444;
+    font-size: 1.2rem;
+}
+
+.outline-card ul {
+    padding-left: 0;
+}
+
+.outline-card ul li {
+    font-family: 'Lato', sans-serif;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Gold Checkmark for lists */
+.gold-check {
+    color: #e7c08e; /* Consistent gold/tan color for checkmarks, as per design */
+}
+
+/* Image Wrapper Styling */
+.image-wrapper {
+    position: relative;
+    padding-bottom: 120%; /* Example: 4:5 aspect ratio (height / width * 100%) for initial mobile sizing */
+    height: 0; /* Override height for padding-bottom trick */
+    border-radius: 8px; /* Match card border-radius */
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+/* Adjust image aspect ratio on larger screens to fill the height of the stacked cards */
+@media (min-width: 992px) { /* On large screens */
+    .image-wrapper {
+        height: 100%; /* Allow image wrapper to take full height of column */
+        padding-bottom: 0; /* Disable padding-bottom trick for height on larger screens */
+    }
+}
+
+/* Secitons-11 */
+
+/* Section Base */
+.promise-outcome-section {
+    background-color: #fffaf7; /* Consistent soft off-white background */
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/* Section Heading Style */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #444;
+}
+
+/* Table Container (Constrain width to match design) */
+.promise-table-container {
+    max-width: 900px;
+}
+
+/* Table Header Text (You'll Learn/You'll Feel) */
+.table-header .table-head-text h5 {
+    font-family: 'Lato', sans-serif;
+    color: #444;
+    font-size: 1.1rem;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-bottom: 5px; /* Space below header */
+    border-bottom: 2px solid #ddd; /* Subtle separator line */
+}
+
+/* Table Row and Cell Styling */
+.table-row {
+    margin: 0;
+    border-bottom: 1px solid #f0f0f0; /* Very light horizontal line between rows */
+}
+
+.table-cell {
+    font-family: 'Lato', sans-serif;
+    color: #555;
+    font-size: 0.95rem;
+    padding: 15px 15px 15px 3px; /* Padding for height and alignment */
+    line-height: 1.5;
+}
+
+/* Remove bottom border from the final row */
+.table-row:last-child {
+    border-bottom: none;
+}
+
+/* Adjust cell padding on small screens for better wrap */
+@media (max-width: 767px) {
+    .table-header {
+        display: none; /* Hide header text on mobile since the cells will stack */
+    }
+    .table-row {
+        /* On mobile, columns stack, so each original cell gets its own line */
+        border-bottom: 1px solid #f0f0f0; 
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+    .table-cell {
+        padding: 5px 3px;
+    }
+    .table-row:last-child {
+        border-bottom: 1px solid #f0f0f0;
+    }
+}
+
+/* Sections-12 */
+
+/* Section Base */
+.bio-and-cta-section {
+    background-color: #fffaf7; /* Consistent soft off-white background */
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/* Section Heading Style */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #444;
+}
+
+/* --- Biography Styling --- */
+.bio-image-wrapper {
+    max-width: 300px;
+}
+
+.bio-image-wrapper img {
+    border-radius: 8px;
+    object-fit: cover;
+    height: auto;
+}
+
+.bio-content p {
+    font-family: 'Lato', sans-serif;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.bio-content p strong {
+    color: #444; /* Darker text for emphasized points */
+}
+
+/* Social Proof Badges */
+.badge-item {
+    display: inline-flex;
+    align-items: center;
+    background-color: #fcf8f5; /* Light background for the badge */
+    border: 1px solid #e7c08e; /* Accent border */
+    color: #5d4a36; /* Darker text/icon color */
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.badge-item i {
+    color: #e7c08e; /* Accent color for icon */
+}
+
+.signature-img {
+    max-width: 150px; /* Size the signature appropriately */
+    opacity: 0.8;
+}
+
+/* --- Final CTA Card Styling --- */
+.final-cta-card {
+    background-color: #ffffff;
+    border: 2px solid #e7c08e; /* Border matching the pricing section */
+    border-radius: 8px;
+    padding: 2.5rem 1.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.price-highlight {
+    font-family: 'Playfair Display', serif;
+    color: #b8860b; /* Deep gold color */
+    font-size: 2.5rem;
+}
+
+.offer-title-small {
+    font-family: 'Playfair Display', serif;
+    color: #444;
+    font-size: 1.5rem;
+}
+
+.custom-btn-gradient-final {
+    /* Custom Gradient Background (Matching the soft gold/peach tone) */
+    background-image: linear-gradient(to right, #f7d9a8, #e7c08e);
+    border: none;
+    color: #5d4a36; /* Darker text for contrast */
+    font-weight: 600;
+    padding: 15px 30px;
+    border-radius: 50px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease;
+}
+
+.custom-btn-gradient-final:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0.9;
+    color: #5d4a36;
+}
+
+.tiny-text-small {
+    font-size: 0.7rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .bio-image-wrapper {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Sections-13 */
+
+/* --- FAQ Section Styles --- */
+.faq-section {
+    background-color: #fffaf7; /* Consistent soft off-white background */
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+.custom-accordion {
+    max-width: 800px; /* Constrain FAQ width for readability */
+}
+
+.custom-accordion .accordion-item {
+    border: none; /* Remove default Bootstrap borders */
+    border-bottom: 1px solid #f0f0f0; /* Use a very light separator line */
+    background-color: transparent;
+}
+
+.custom-accordion .accordion-button {
+    font-family: 'Lato', sans-serif;
+    color: #444;
+    font-size: 1.05rem;
+    font-weight: 500;
+    padding: 1.25rem 0.5rem; /* Spacious padding */
+    background-color: transparent;
+    transition: color 0.2s ease;
+    border: none;
+    box-shadow: none !important;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    color: #b8860b; /* Accent color when active */
+    background-color: transparent;
+}
+
+/* Remove the arrow icon for a cleaner look, as seen in the image */
+.custom-accordion .accordion-button::after {
+    content: '›'; /* Use a custom arrow or plus/minus icon */
+    font-family: monospace;
+    font-size: 1.5rem;
+    background-image: none;
+    transform: rotate(90deg);
+    transition: transform 0.2s ease;
+    width: 20px;
+}
+
+.custom-accordion .accordion-button.collapsed::after {
+    transform: rotate(0deg);
+}
+
+.custom-accordion .accordion-body {
+    font-family: 'Lato', sans-serif;
+    color: #666;
+    padding: 0 0.5rem 1.5rem 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- Footer Section Styles --- */
+.site-footer {
+    background-color: #fffaf7; /* Use the same soft background */
+    color: #666;
+    border-top: 1px solid #eee; /* Subtle separation from the rest of the page */
+}
+
+.footer-brand {
+    font-family: 'Playfair Display', serif;
+    color: #444;
+    font-size: 1.5rem;
+}
+
+.footer-contact p {
+    color: #7a7a7a;
+}
+
+.footer-contact a {
+    color: #7a7a7a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-contact a:hover {
+    color: #b8860b; /* Accent hover color */
+}
+
+/* Navigation Links */
+.footer-links li a {
+    font-family: 'Lato', sans-serif;
+    color: #7a7a7a;
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 2;
+    transition: color 0.2s ease;
+}
+
+.footer-links li a:hover {
+    color: #b8860b; /* Accent hover color */
+}
+
+/* Legal/Copyright Text */
+.footer-legal {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 1.5rem;
+}
+
+.footer-legal .tiny-text {
+    font-size: 0.75rem;
+    color: #999;
+}
+
+.footer-legal a {
+    color: #999;
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+
+
+
+ :root {
+            --primary-color: #b8860b; /* Deep Gold/Olive */
+            --accent-color: #e7c08e; /* Soft Tan/Peach */
+            --background-color: #fffaf7; /* Soft Off-White */
+            --text-color: #444;
+            --light-text-color: #666;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        /* --- Global Styles & Utility Classes --- */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--text-color);
+            font-size: 2.5rem;
+        }
+
+        .gold-check, .gold-star, .price-highlight, .offer-title {
+            color: var(--accent-color) !important;
+        }
+        
+        /* Custom Gradient Button (Soft Gold) */
+        .custom-btn-gradient-small {
+            background-image: linear-gradient(to right, #f7d9a8, var(--accent-color));
+            border: none;
+            color: #5d4a36; 
+            font-weight: 700;
+            padding: 12px 20px;
+            border-radius: 50px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            transition: all 0.3s ease;
+        }
+
+        .custom-btn-gradient-small:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0.95;
+            color: #5d4a36;
+            transform: translateY(-2px);
+        }
+
+        /* --- Navbar (Enhanced Design) --- */
+        .navbar-custom {
+            background-color: var(--background-color);
+            border-bottom: 1px solid #f0e9e1;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+        }
+
+        /* Mobile Menu Styling */
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        /* --- Section 1: Hero Section (Mocked) --- */
+        .hero-section {
+            background-color: var(--background-color);
+            padding: 80px 0;
+        }
+        
+        /* --- Section 6: What You Get (Refined) --- */
+        .what-you-get-section {
+            background-color: var(--background-color);
+            padding: 6rem 0;
+        }
+
+        .get-item-card {
+            background-color: #fcf8f5; 
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 12px; /* Slightly larger radius for softer look */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03); 
+            transition: all 0.3s ease;
+        }
+
+        .get-item-card:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+            transform: translateY(-4px); /* Dynamic lift */
+            border-color: var(--accent-color);
+        }
+
+        .get-item-card .get-item-icon {
+            font-size: 2.5rem; 
+            color: var(--accent-color); 
+        }
+
+        /* --- Section 7: Pricing Card (Refined) --- */
+        .pricing-section {
+            background-color: var(--background-color);
+            padding: 6rem 0;
+        }
+
+        .pricing-card-container {
+            max-width: 450px; 
+            border-radius: 12px;
+            overflow: hidden; 
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); 
+            background-color: #ffffff;
+        }
+
+        .card-top-banner {
+            background: linear-gradient(to right, var(--primary-color), #daa520);
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.5px;
+        }
+        
+        .card-body-offer {
+            background-color: #ffffff;
+            padding: 2.5rem 1.5rem;
+        }
+
+        .offer-title {
+            color: var(--primary-color); 
+        }
+
+        .tiny-text {
+            font-size: 0.75rem;
+            color: var(--light-text-color);
+        }
+        .tiny-text-small {
+            font-size: 0.65rem;
+            color: #999;
+        }
+
+        /* --- Section 8: Testimonials (Refined) --- */
+        .testimonials-section {
+            background-color: var(--background-color);
+            padding: 6rem 0;
+        }
+
+        .testimonial-card {
+            background-color: #fcf8f5; 
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03); 
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            transform: scale(1.02); /* Subtle hover effect */
+        }
+
+        .testimonial-card .quote-text {
+            color: var(--text-color);
+            font-size: 1rem;
+            font-style: italic; 
+        }
+
+        .testimonial-card .reviewer-name {
+            color: var(--primary-color); 
+        }
+        
+        /* --- Section 9: Is This For You? (Refined) --- */
+        .qualifying-section {
+            background-color: var(--background-color);
+            padding: 6rem 0;
+        }
+
+        .qualifying-box {
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+        }
+
+        .affirmation-box {
+            background-color: #e8f5e8; /* Soft green */
+            border: 1px solid #c8e6c9;
+        }
+
+        .affirmation-box .box-title {
+            color: #388e3c;
+        }
+        
+        .affirmation-box ul li {
+            transition: background-color 0.2s;
+        }
+        
+        .affirmation-box ul li:hover {
+            background-color: #d8ead8;
+        }
+
+        .affirmation-box ul li::before {
+            color: #4caf50; 
+        }
+
+        .disqualification-box {
+            background-color: #fdeaea; /* Soft red/pink */
+            border: 1px solid #f8d0d0;
+        }
+
+        .disqualification-box .box-title {
+            color: #d32f2f; 
+        }
+        
+        .disqualification-box ul li {
+            transition: background-color 0.2s;
+        }
+        
+        .disqualification-box ul li:hover {
+            background-color: #f8dbdb;
+        }
+
+        .disqualification-box ul li::before {
+            color: #f44336; 
+        }
+
+        /* --- Section 10: Program Outline & Bonuses (Refined) --- */
+        .program-outline-section {
+            background-color: var(--background-color);
+            padding: 6rem 0;
+        }
+
+        .outline-card {
+            background-color: #fcf8f5; 
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03); 
+            transition: all 0.3s ease;
+        }
+        
+        .outline-card:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+        }
+
+        .image-wrapper {
+            position: relative;
+            padding-bottom: 120%; 
+            height: 0; 
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (min-width: 992px) { 
+            .image-wrapper {
+                height: 100%; 
+                padding-bottom: 0; 
+            }
+        }
+
+        /* --- Section 11: The Promise / Outcome (Refined) --- */
+        .promise-outcome-section {
+            background-color: var(--background-color);
+            padding: 6rem 0;
+        }
+
+        .promise-table-container {
+            max-width: 900px;
+            border: 1px solid #f0e9e1;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .table-header .table-head-text h5 {
+            color: var(--primary-color);
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .table-row {
+            margin: 0;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s;
+        }
+        
+        .table-row:hover {
+            background-color: #fcf8f5;
+        }
+
+        .table-cell {
+            color: #555;
+            padding: 18px 15px 18px 15px;
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        
+        /* --- Section 12: About Anthony & Final CTA (Refined) --- */
+        .bio-and-cta-section {
+            background-color: var(--background-color);
+            padding: 6rem 0;
+        }
+
+        .bio-image-wrapper img {
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge-item {
+            background-color: #fcf8f5; 
+            border: 1px solid var(--accent-color); 
+            color: #5d4a36; 
+            transition: all 0.3s ease;
+        }
+        
+        .badge-item:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .badge-item:hover i {
+            color: white;
+        }
+        
+        .badge-item i {
+            color: var(--accent-color); 
+        }
+
+        .final-cta-card {
+            background-color: #ffffff;
+            border: 3px solid var(--accent-color); 
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-btn-gradient-final {
+            background-image: linear-gradient(to right, #f7d9a8, var(--accent-color));
+            color: #5d4a36; 
+            font-weight: 700;
+            padding: 15px 30px;
+            border-radius: 50px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            transition: all 0.3s ease;
+        }
+        
+        .custom-btn-gradient-final:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0.95;
+            transform: translateY(-2px);
+        }
+
+        /* --- Section 13: FAQ (Fix and Refined) --- */
+        .faq-section {
+            padding: 6rem 0;
+            background-color: #fcf8f5; /* Use a slightly different background for contrast */
+        }
+        
+        .custom-accordion .accordion-item {
+            border: 1px solid #f0e9e1;
+            margin-bottom: 10px;
+            border-radius: 8px !important;
+            overflow: hidden;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        
+        .custom-accordion .accordion-item:hover {
+            border-color: var(--accent-color);
+        }
+
+        .custom-accordion .accordion-button {
+            font-weight: 600;
+            padding: 1rem 1.25rem;
+            color: var(--text-color);
+            transition: background-color 0.3s;
+        }
+        
+        /* FIX: Ensure the arrow rotates and toggles */
+        .custom-accordion .accordion-button::after {
+            background-image: none; /* Remove default arrow image */
+            content: '\f067'; /* Font Awesome Plus Icon */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+
+        .custom-accordion .accordion-button:not(.collapsed) {
+            color: var(--primary-color); 
+            background-color: #fff;
+            border-bottom: 1px solid var(--accent-color);
+        }
+        
+        .custom-accordion .accordion-button:not(.collapsed)::after {
+            content: '\f068'; /* Font Awesome Minus Icon */
+            transform: rotate(0deg); /* No rotation needed for plus/minus */
+        }
+
+        .custom-accordion .accordion-body {
+            background-color: white;
+            border-top: none;
+            padding: 1rem 1.25rem;
+        }
+
+        /* --- Footer (Refined) --- */
+        .site-footer {
+            background-color: var(--background-color); 
+            color: var(--light-text-color);
+            border-top: 5px solid var(--accent-color); /* Stronger separator */
+        }
+
+        .footer-brand {
+            color: var(--primary-color);
+        }
+
+        .footer-contact a, .footer-links a {
+            color: var(--light-text-color);
+            transition: color 0.3s;
+        }
+
+        .footer-contact a:hover, .footer-links a:hover {
+            color: var(--primary-color); 
+            text-decoration: underline;
+        }
+        
+        .footer-links li a {
+            line-height: 2.5; /* More space between links */
+        }
+        
+        .footer-legal a {
+            color: #777;
+        }
+
+        /* --- Custom Icons/Images --- */
+        /* Placeholder for images, as per instructions */
+        .img-fluid {
+            /* Placeholder styles for images that were referenced but not provided as URLs */
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            min-height: 250px;
+            display: block;
+            text-align: center;
+            line-height: 250px;
+            color: #aaa;
+        }
+        
+        /* Make the signature transparent in the placeholder environment */
+        .signature-img {
+            background-color: transparent;
+            border: none;
+            min-height: 50px;
+            line-height: 50px;
+        }
